@@ -3,7 +3,6 @@
 from dataclasses import dataclass
 import os
 from typing import Optional
-
 from dotenv import load_dotenv
 
 
@@ -70,3 +69,6 @@ class Env:
     aml_env_name_score_copy: Optional[str] = os.environ.get("AML_ENV_NAME_SCORE_COPY")  # NOQA: E501
     batchscore_script_path: Optional[str] = os.environ.get("BATCHSCORE_SCRIPT_PATH")  # NOQA: E501
     batchscore_copy_script_path: Optional[str] = os.environ.get("BATCHSCORE_COPY_SCRIPT_PATH")  # NOQA: E501
+    app_insights_connection_string: Optional[str] = os.environ.get("APP_INSIGHTS_CONNECTION_STRING")  # NOQA: E501
+    log_to_console: Optional[bool] = os.environ.get("LOG_TO_CONSOLE", "false").lower().strip() == "true"  # NOQA: E501
+    log_level: Optional[str] = os.environ.get("LOG_LEVEL", "WARNING")  # NOQA: E501
