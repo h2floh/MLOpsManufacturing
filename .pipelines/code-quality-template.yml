@@ -2,9 +2,7 @@
 steps:
 # This step ensures that the latest ci dependencies are applied to the build agent
 - script: |   
-   source activate base
-   conda env update -f ml_model/ci_dependencies.yml
-   source activate mlopstensorflow_ci
+   conda env update -f ml_model/ci_dependencies.yml -n ci
   displayName: 'Update missing dependencies for current branch on build agent'
 
 - script: |   
